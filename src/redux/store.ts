@@ -1,7 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
+import TreeReducer from "./treeSlice"
 
 const store = configureStore({
-  reducer: {}, 
+  reducer: {
+    trees: TreeReducer,
+  }, 
 });
 
 export type RootState = ReturnType<typeof store.getState>;

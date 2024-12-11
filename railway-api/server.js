@@ -1,12 +1,14 @@
 import express, { json } from "express";
+import cors from "cors";
 import { createConnection } from "mysql2";
 import { config } from "dotenv";
+ 
 
 config();
 
 const app = express();
 const port = 3000;
-
+app.use(cors());
 
 // Подключение к базе данных
 const db = createConnection({
@@ -41,6 +43,26 @@ app.get("/trees", (req, res) => {
       }
       res.json(results);
     });
+  });
+  
+  app.post("/trees", (req, res) => {
+    const { name, height, ornaments_count, ornaments_color } = req.body;
+    const query = "INSERT INTO trees (name, height, ornaments_count, ornaments_color) VALUES (?, ?, ?, ?)";
+    const values = [name, height, ornaments_count, ornaments_color];
+
+    if (!name || !height || !ornaments_count || !ornaments_color) {
+      return res.status(400).send("All fields are required");
+    }
+  
+    db.query(query, values, (err, results) => {
+      if (err) {
+        console.error("Error inserting data:", err);
+        res.status(500).send("Error inserting data");
+        return;
+      }
+      res.status(201).send("Tree added successfully!");
+    });
+    
   });
   
   // Запуск сервера
