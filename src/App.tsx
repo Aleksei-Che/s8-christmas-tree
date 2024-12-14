@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Home from './pages/home';
-import Mapa from './components/Mapa';
+import MapaPage from './pages/MapaPage';
 import FullCalendar from './components/FullCalendar';
 import Grafics from './components/Grafics';
 
@@ -17,7 +17,7 @@ import Grafics from './components/Grafics';
         <main className='container mx-auto py-8 px-4 '>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/mapa" element={<Mapa />} />
+          <Route path="/mapa" element={<MapaPage />} />
           <Route path="/fullcalendar" element={<FullCalendar />} />
           <Route path="/grafics" element={<Grafics />} />
         </Routes>

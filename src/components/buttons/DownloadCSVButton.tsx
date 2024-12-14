@@ -1,4 +1,4 @@
-import { Tree } from "../../redux/treeSlice"; // Импортируем интерфейс Tree
+import { Tree } from "../../redux/treeSlice"; 
 
 interface DownloadCSVButtonProps {
   trees: Tree[];
