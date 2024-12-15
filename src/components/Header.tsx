@@ -6,7 +6,7 @@ const Header = () => {
       <div className="py-4 px-6 flex relative">
         <div className="absolute top-1/2 left-8 transform -translate-y-1/2 items-center">
           <h1 className="text-6xl font-serif italic">Christmas Tree</h1>
-          <p className="text-2xl font-serif mt-2">Dinos, qué hay en tu árbol de Navidad</p>
+          <p className="text-2xl font-serif mt-2">Qué hay en tu árbol de Navidad?</p>
         </div>
         <div className="mx-auto">
           <img 

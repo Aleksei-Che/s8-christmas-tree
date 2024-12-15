@@ -74,7 +74,13 @@ const Calendar: React.FC = () => {
 
   return (
     <div className="bg-gradient-to-b from-green-800 to-blue-900 text-white p-6 rounded-lg shadow-lg">
-      <Snowfall snowflakeCount={50} />
+      <Snowfall 
+        snowflakeCount={50}
+        style={{
+          position: 'fixed',
+          width: '100vw',
+          height: '100vh',
+      }} />
       <FullCalendar
         plugins={[dayGridPlugin, interactionPlugin]}
         initialView="dayGridMonth"

@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
     return (
-        <nav className="bg-sky-800 text-white py-4 px-6">
-      <ul className="flex space-x-6 justify-center">
+<nav className="bg-sky-800 text-white py-4 px-6 sticky top-0 z-50">
+        <ul className="flex space-x-6 justify-center">
         <li>
           <Link to="/" className="hover:text-gray-300">
             Home

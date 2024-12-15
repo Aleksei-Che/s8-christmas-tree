@@ -5,6 +5,7 @@ import TreeTable from "../components/TreeTable";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchTrees, deleteTree, addTree } from "../redux/treeSlice";
 import { RootState, AppDispatch } from "../redux/store";
+import Snowfall from "react-snowfall";
 
 const Home: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -41,6 +42,13 @@ const Home: React.FC = () => {
 
   return (
     <div className="p-6 bg-gradient-to-b from-sky-950 via-sky-800 to-green-700 min-h-screen text-gray-200">
+      <Snowfall 
+              snowflakeCount={50}
+              style={{
+                position: 'fixed',
+                width: '100vw',
+                height: '100vh',
+            }} />
       <h1 className="text-3xl font-bold mb-6 text-center">Christmas Tree Manager</h1>
       <div className="flex justify-between items-center mb-6">
         <AddItemButton onAdd={handleAdd} />
