@@ -22,7 +22,6 @@ const db = createConnection({
     console.log("Successfully connected to the MySQL database on Railway!");
   });
   
-  // Получение всех деревьев
   router.get("/", (req, res) => {
     db.query("SELECT * FROM trees", (err, results) => {
       if (err) {
@@ -34,7 +33,6 @@ const db = createConnection({
     });
   });
   
-  // Добавление нового дерева
   router.post("/", (req, res) => {
     const { name, height, ornaments_count, ornaments_color } = req.body;
     const query = "INSERT INTO trees (name, height, ornaments_count, ornaments_color) VALUES (?, ?, ?, ?)";

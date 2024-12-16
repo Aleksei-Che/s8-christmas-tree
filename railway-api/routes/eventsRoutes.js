@@ -15,7 +15,6 @@ const db = createConnection({
   port: process.env.MYSQLPORT,
 });
 
-// Маршрут для получения всех событий
 router.get("/", (req, res) => {
   db.query("SELECT * FROM events", (err, results) => {
     if (err) {
@@ -27,7 +26,6 @@ router.get("/", (req, res) => {
   });
 });
 
-// Маршрут для добавления нового события
 router.post("/", (req, res) => {
   const { title, date } = req.body;
 
@@ -46,7 +44,6 @@ router.post("/", (req, res) => {
   });
 });
 
-// Маршрут для удаления события
 router.delete("/:id", (req, res) => {
   const { id } = req.params;
 

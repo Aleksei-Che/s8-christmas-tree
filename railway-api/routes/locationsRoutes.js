@@ -6,7 +6,6 @@ config ();
 
 const router = express.Router();
 
-// Подключение к базе данных
 const db = createConnection({
     host: process.env.MYSQLHOST,
     user: process.env.MYSQLUSER,
@@ -15,7 +14,6 @@ const db = createConnection({
     port: process.env.MYSQLPORT,
 });
 
-// Маршрут для получения всех локаций
 router.get("/", (req, res) => {
     db.query("SELECT * FROM locations", (err, results) => {
         if (err) {
@@ -27,7 +25,6 @@ router.get("/", (req, res) => {
     });
 });
 
-// Маршрут для добавления новой локации
 router.post("/", (req, res) => {
     const { name, latitude, longitude } = req.body;
 
