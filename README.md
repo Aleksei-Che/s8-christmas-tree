@@ -49,6 +49,7 @@ En la raíz del proyecto, ejecuta:
 ```bash
 npm install
 ```
+
 3. **Configura el archivo .env:**
 
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables de entorno:
