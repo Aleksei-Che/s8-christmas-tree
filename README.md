@@ -42,14 +42,17 @@ Este proyecto es una aplicación web para gestionar un árbol de Navidad virtual
    ```bash
    git clone https://github.com/Aleksei-Che/s8-christmas-tree
   ```
-2. **Instala las dependencias:**
+
+2. **Instala las dependencias**
 En la raíz del proyecto, ejecuta:
+
 ```bash
 npm install
 ```
 3. **Configura el archivo .env:**
 
 Crea un archivo .env en la raíz del proyecto y añade las siguientes variables de entorno:
+
 ```bash
 MYSQLHOST=your-mysql-host
 MYSQLDATABASE=your-database-name
