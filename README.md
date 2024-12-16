@@ -20,6 +20,8 @@ Este proyecto es una aplicación web para gestionar un árbol de Navidad virtual
 
 - **Frontend**: 
   - React
+  - Vite
+  - TypeScript
   - Tailwind CSS
   - Mapbox GL
   - Chart.js
