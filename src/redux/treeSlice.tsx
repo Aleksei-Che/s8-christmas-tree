@@ -75,9 +75,9 @@ const treeSlice = createSlice({
       .addCase(updateTree.fulfilled, (state, action: PayloadAction<Tree>) => {
         const index = state.trees.findIndex((tree) => tree.id === action.payload.id);
         if (index !== -1) {
-          state.trees[index] = action.payload;
+          state.trees[index] = action.payload; 
         }
-      });
+      })
   },
 });
 

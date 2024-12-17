@@ -52,4 +52,39 @@ const db = createConnection({
     });
   });
   
+  router.put("/:id", (req, res) => {
+    const { id } = req.params;
+    const { name, height, ornaments_count, ornaments_color } = req.body;
+  
+    if (!name || !height || !ornaments_count || !ornaments_color) {
+      return res.status(400).send("All fields are required");
+    }
+  
+    const query = `
+      UPDATE trees 
+      SET name = ?, height = ?, ornaments_count = ?, ornaments_color = ?
+      WHERE id = ?
+    `;
+    const values = [name, height, ornaments_count, ornaments_color, id];
+  
+    db.query(query, values, (err, results) => {
+      if (err) {
+        console.error("Error updating data:", err);
+        return res.status(500).json({ message: "Error updating tree", error: err });
+      }
+  
+      if (results.affectedRows === 0) {
+        return res.status(404).json({ message: "Tree not found" });
+      }
+  
+      res.status(200).json({
+        id: Number(id),
+        name,
+        height,
+        ornaments_count,
+        ornaments_color,
+      });
+    });
+  });
+  
   export default router;
