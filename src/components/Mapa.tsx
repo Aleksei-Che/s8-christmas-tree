@@ -94,7 +94,7 @@ const Mapa: React.FC = () => {
     <div className="flex flex-row items-start min-h-screen">
       {/* Sidebar */}
       <div className="w-80 bg-gray-800 text-gray-300 p-6">
-        <h2 className="text-xl font-bold mb-4">Agregar nueva ubicación</h2>
+        <h2 className="text-xl font-bold mb-4">Agrega la ubicación de tu árbol</h2>
 
         <input
           type="text"
