@@ -108,35 +108,35 @@ const Home: React.FC = () => {
 
       {/* Модалка для редактирования */}
       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
-        <h2 className="text-xl font-bold mb-4">Edit Tree</h2>
+        <h2 className="text-xl font-bold mb-4 text-gray-700">Edit Tree</h2>
         <div className="space-y-4">
           <input
             type="text"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             placeholder="Name"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-gray-700 hover:border-gray-500"
           />
           <input
             type="number"
             value={formData.height}
             onChange={(e) => setFormData({ ...formData, height: e.target.value })}
             placeholder="Height"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-gray-700 hover:border-gray-500"
           />
           <input
             type="number"
             value={formData.ornaments_count}
             onChange={(e) => setFormData({ ...formData, ornaments_count: e.target.value })}
             placeholder="Ornaments Count"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-gray-700 hover:border-gray-500"
           />
           <input
             type="text"
             value={formData.ornaments_color}
             onChange={(e) => setFormData({ ...formData, ornaments_color: e.target.value })}
             placeholder="Ornaments Color"
-            className="w-full p-2 border rounded"
+            className="w-full p-2 border rounded text-gray-700 hover:border-gray-500"
           />
           <button
             onClick={handleSave}
