@@ -12,13 +12,15 @@ interface Event {
   date: string;
 }
 
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const Calendar: React.FC = () => {
   const [events, setEvents] = useState<Event[]>([]);
 
   // Загружаем события с сервера
   const fetchEvents = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/events");
+      const response = await axios.get(`${apiUrl}/events`);
       setEvents(response.data);
     } catch (error) {
       console.error("Error fetching events:", error);
@@ -28,7 +30,7 @@ const Calendar: React.FC = () => {
   // Добавляем новое событие на сервер
   const addEvent = async (event: { title: string; date: string }) => {
     try {
-      const response = await axios.post("http://localhost:3000/events", event);
+      const response = await axios.post(`${apiUrl}/events`, event);
       if (response.status === 201) {
         alert("Evento agregado con éxito");
         fetchEvents(); // Обновляем события
@@ -41,7 +43,7 @@ const Calendar: React.FC = () => {
   // Удаляем событие с сервера
   const deleteEvent = async (id: number) => {
     try {
-      const response = await axios.delete(`http://localhost:3000/events/${id}`);
+      const response = await axios.delete(`${apiUrl}/events/${id}`);
       if (response.status === 200) {
         alert("Evento eliminado con éxito");
         fetchEvents(); // Обновляем события

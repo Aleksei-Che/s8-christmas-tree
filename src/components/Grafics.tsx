@@ -4,7 +4,6 @@ import { Chart as ChartJS, ArcElement, Tooltip, Legend, CategoryScale, LinearSca
 
 ChartJS.register(ArcElement, Tooltip, Legend, CategoryScale, LinearScale, BarElement);
 
-// Обновлённые цвета для соответствия их названиям
 const colorMap: { [key: string]: string } = {
   red: "#FF6384",
   green: "#4CAF50",
@@ -16,13 +15,14 @@ const colorMap: { [key: string]: string } = {
   gray: "#9CA3AF",
 };
 
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const ChartsPage: React.FC = () => {
   const [treeData, setTreeData] = useState<any[]>([]);
 
-  // Функция для получения данных с сервера
   const fetchTreeData = async () => {
     try {
-      const response = await fetch("http://localhost:3000/trees");
+      const response = await fetch(`${apiUrl}/trees`);
       const data = await response.json();
       setTreeData(data);
     } catch (error) {
@@ -34,7 +34,6 @@ const ChartsPage: React.FC = () => {
     fetchTreeData();
   }, []);
 
-  // Генерация данных для круговой диаграммы
   const pieData = {
     labels: [...new Set(treeData.map((tree) => tree.ornaments_color))],
     datasets: [
@@ -52,7 +51,6 @@ const ChartsPage: React.FC = () => {
     ],
   };
 
-  // Генерация данных для столбчатой диаграммы
   const barData = {
     labels: treeData.map((tree) => tree.name),
     datasets: [

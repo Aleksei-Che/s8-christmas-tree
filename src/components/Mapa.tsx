@@ -12,6 +12,8 @@ interface Location {
   longitude: number;
 }
 
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
 const Mapa: React.FC = () => {
   const mapContainer = useRef<HTMLDivElement | null>(null); 
   const map = useRef<mapboxgl.Map | null>(null); 
@@ -37,7 +39,7 @@ const Mapa: React.FC = () => {
 
   const fetchLocations = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/locations");
+      const response = await axios.get(`${apiUrl}/locations`);
       setLocations(response.data);
     } catch (error) {
       console.error(error);
@@ -62,7 +64,7 @@ const Mapa: React.FC = () => {
     }
 
     try {
-      const response = await axios.post("http://localhost:3000/locations", {
+      const response = await axios.post(`${apiUrl}/locations`, {
         name: newLocationName,
         latitude: newLocation.latitude,
         longitude: newLocation.longitude,

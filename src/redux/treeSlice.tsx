@@ -29,18 +29,21 @@ const initialState: TreeState = {
   error: null,
 };
 
+const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:3000";
+
+
 export const fetchTrees = createAsyncThunk("trees/fetchTrees", async () => {
-  const response = await axios.get("http://localhost:3000/trees");
+  const response = await axios.get(`${apiUrl}/trees`);
   return response.data;
 });
 
 export const addTree = createAsyncThunk("trees/addTree", async (tree: NewTree) => {
-  const response = await axios.post("http://localhost:3000/trees", tree);
+  const response = await axios.post(`${apiUrl}/trees`, tree);
   return response.data;
 });
 
 export const updateTree = createAsyncThunk("trees/updateTree", async (updatedTree: Tree) => {
-  const response = await axios.put(`http://localhost:3000/trees/${updatedTree.id}`, updatedTree);
+  const response = await axios.put(`${apiUrl}/trees/${updatedTree.id}`, updatedTree);
   return response.data;
 });
 

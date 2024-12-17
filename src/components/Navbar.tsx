@@ -33,7 +33,6 @@ const Navbar: React.FC = () => {
           )}
         </div>
 
-        {/* Ссылки навигации */}
         <div className="flex-1">
           <ul
             className={`${
@@ -67,7 +66,7 @@ const Navbar: React.FC = () => {
               </Link>
             </li>
 
-            {/* Горизонтальная линия и кнопки Header */}
+            {/* linea horizontal y botones de Header */}
             {menuOpen && (
               <>
                 <hr className="my-4 border-gray-500" />
