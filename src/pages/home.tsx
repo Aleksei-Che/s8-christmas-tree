@@ -21,12 +21,10 @@ const Home: React.FC = () => {
     ornaments_color: "",
   });
 
-  // Загружаем деревья при монтировании
   useEffect(() => {
     dispatch(fetchTrees());
   }, [dispatch]);
 
-  // Открытие модалки для редактирования
   const handleEdit = (id: number) => {
     const treeToEdit = trees.find((tree) => tree.id === id);
     if (treeToEdit) {
@@ -41,7 +39,6 @@ const Home: React.FC = () => {
     }
   };
 
-  // Сохранение редактированных данных
   const handleSave = async () => {
     if (selectedTree) {
       try {
@@ -55,7 +52,7 @@ const Home: React.FC = () => {
             created_at: selectedTree.created_at,
           })
         );
-        dispatch(fetchTrees()); // Обновляем данные
+        dispatch(fetchTrees()); 
         setIsModalOpen(false);
         setSelectedTree(null);
       } catch (error) {

@@ -2,7 +2,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Home from './pages/home';
+import Home from './pages/Home';
 import MapaPage from './pages/MapaPage';
 import FullCalendar from './components/FullCalendar';
 import Grafics from './components/Grafics';
