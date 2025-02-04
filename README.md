@@ -4,6 +4,8 @@
 
 Este proyecto es una aplicación web para gestionar un árbol de Navidad virtual. Los usuarios pueden agregar información sobre su árbol, como la altura, las ubicaciones de las decoraciones y sus colores, así como visualizar esta información en gráficos y en un mapa interactivo.
 
+⚠ Nota: Actualmente, las funciones de autenticación no están activas.
+
 ![Screenshot 1](public/captura1.png)
 ![Screenshot 2](public/captura2.png)
 ![Screenshot 3](public/captura3.png)
